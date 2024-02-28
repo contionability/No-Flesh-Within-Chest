@@ -39,7 +39,7 @@ StartupEvents.registry('item', event => {
     event.create('rare_mineral_cluster').texture('kubejs:item/rare_mineral_cluster')
     event.create('stardust_fragment').texture('kubejs:item/stardust_fragment')
     event.create('exclamation_mark').texture('kubejs:item/exclamation_mark')
-    event.create('full_mark').texture('kubejs:item/full_mark')
+    event.create('full_mark').texture('kubejs:item/full_mark').group(null)
     event.create('ritual_catalyst').texture('kubejs:item/ritual_catalyst')
     event.create('secret_of_origin').texture('kubejs:item/secret_of_origin').maxStackSize(1)
     event.create('secret_of_rain').texture('kubejs:item/secret_of_rain').tag('kubejs:secret').maxStackSize(1)
@@ -183,7 +183,7 @@ StartupEvents.registry('item', event => {
     // 随机基本器官
     event.create('kubejs:random_tumor').texture('kubejs:item/organs/others/random_tumor').maxStackSize(1).tag('kubejs:organ').tag('kubejs:infected').tag('itemborders:iron')
 
-    event.create('kubejs:sponsor_badge').texture('kubejs:item/sponsor_badge').maxStackSize(1)
+    event.create('kubejs:sponsor_badge').texture('kubejs:item/sponsor_badge').maxStackSize(1).group(null)
     event.create('kubejs:mysterious_trinket').texture('kubejs:item/mysterious_trinket').maxStackSize(64)
     event.create('kubejs:chicken_flavor_powder').texture('kubejs:item/chicken_flavor_powder').maxStackSize(64)
 
@@ -192,7 +192,7 @@ StartupEvents.registry('item', event => {
         .use((level, player, hand) => {
             return true;
         })
-        .useDuration(itemStack => 20)
+        .useDuration(itemStack => 60)
         .finishUsing((itemstack, level, entity) => {
             if (level.isClientSide()) return itemstack
             let nbt = { organSocres: {} }
